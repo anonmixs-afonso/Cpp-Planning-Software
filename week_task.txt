@@ -1,0 +1,17 @@
+06:00h : Fast Coffe and Cpp
+07:00h : Cpp
+08:00h : Cpp
+09:00h : Normal Coffe and Start Pure C
+10:00h : Pure C
+11:00h : Pure C
+12:00h : Lunch
+13:00h : Lunch
+14:00h : Rest
+15:00h : Cpp
+16:00h : Cpp
+17:00h : Cpp
+18:00h : Rest
+19:00h : Rest
+20:00h : Rest
+21:00h : Rest
+22:00h : Rest
