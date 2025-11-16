@@ -3,13 +3,51 @@
 #include <string>
 #include <fstream>
 
-void wtr_set ()
+void wtr_set_random()
 {
-  std::string week_task;
+  std::string week_task {};
+  for (int i = 0; i < 7; i++)
+  {
+    std::string file_path = "/home/anon/Study_Programs/Cpp/day_week_tasks/"
+    + std::to_string(i + 1) + ".txt";
+    std::ofstream output_file (file_path);
+    std::cout << "*********************************\n";
+    std::cout << "Week day: " << i + 1 << "\n";
+    std::cout << "*********************************\n";
+    char exit_record {'y'};
+
+    while (exit_record != 'n')
+    {
+      std::cout << "Type our task: ";
+      std::getline(std::cin >> std::ws, week_task);
+
+      if (output_file.is_open())
+      {
+        std::cerr << "Task Recorded.\n";
+      }
+
+      else
+      {
+        std::cerr << "Error: Task Not Recorded.\n";
+      }
+
+      output_file << "Task " << i + 1 << ": " << week_task << "\n";
+      std::cout << "Record Another Task for day " << i + 1 << " (y/n): ";
+      std::cin >> exit_record;
+    }
+
+    output_file.close ();
+  }
+}
+
+void wtr_set()
+{
+  std::string week_task {};
   int hour_of_day {6};
   for (int i = 0; i < 7; i++)
   {
-    std::string file_path = "/home/anon/Study_Programs/Cpp/day_week_tasks/" + std::to_string(i) + ".txt";
+    std::string file_path = "/home/anon/Study_Programs/Cpp/day_week_tasks/" 
+    + std::to_string(i + 1) + ".txt";
     std::ofstream output_file (file_path);
     std::cout << "*********************************\n";
     std::cout << "Week day: " << i + 1 << "\n";
@@ -17,7 +55,7 @@ void wtr_set ()
     for (int i = 0; i < 17; i++) 
     {
       std::cout << "Type the task of " << hour_of_day << ":00h: ";
-      std::getline (std::cin, week_task);
+      std::getline (std::cin >> std::ws, week_task);
     
       if (output_file.is_open())
       {
@@ -43,5 +81,4 @@ void wtr_set ()
     hour_of_day = 6;
     output_file.close ();
   }
-  hour_of_day = 0;
 }
